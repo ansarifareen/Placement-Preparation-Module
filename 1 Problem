@@ -1,0 +1,18 @@
+#Two Sum Problem
+HashMAp Approach: It uses the hash Table to store the indices of each integer in the array,for each integer first we calculate the complement
+and then checks that if it is exist in the hash table or not.
+if it does,we return the indices of the two integers as an array.
+
+
+Problem :Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+Solution:Python3 Code of Two Sum From Leetcode.
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prevMap ={} 
+        for i,n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return[prevMap[diff],i]
+            prevMap[n]=i
+        return
